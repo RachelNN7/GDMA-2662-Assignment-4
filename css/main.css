@@ -1,0 +1,613 @@
+@charset "UTF-8";
+
+/*--------------------------------------------------------------
+    TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Settings: used with preprocessors and contain font, colors definitions, etc.
+2.0 - Tools: globally used mixins and functions. Use for preprocessor only.
+3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc. 
+        -Universal
+4.0 - Elements: styling for bare/generic HTML elements 
+        - Typography: Headings, Paragraphs, Blockquotes, Anchors
+5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
+        - Framework
+6.0 - Components: specific designed components
+        -img
+        -content
+7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+        - alignment	 
+        - screen reader   
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+    3.0 - GENERIC
+-------------------------------------------------------------- */
+
+/* ----- UNIVERSAL ----- */
+*, 
+*:after,
+*:before {
+    -moz-box-sizing: border-box;
+    -o-box-sizing:border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing:border-box;
+    box-sizing: border-box;
+}
+
+html {
+    color: #fff;
+    font: 1.2rem/1.4em 'Apparat', sans-serif;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        text-align: left;
+    }
+}
+
+
+/*--------------------------------------------------------------
+    4.0 - ELEMENTS
+-------------------------------------------------------------- */
+/*------ Typography------- */
+h1,
+ul {
+    margin: 0;
+}
+
+h2,
+h3 {
+    color:#ffedb7;
+    font-size: 1.4;
+}
+
+h4 {
+    text-align: right;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+}
+
+ul a {
+    text-decoration: none;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    color: #fff;
+}
+
+p + ul {
+    padding: 1em 0 0;
+}
+
+
+@media screen and (min-width: 768px) {
+    h1,
+    p + ul {
+        text-align: left;
+    }
+
+    h1 {
+        margin: .5em 0;
+    }
+
+}
+/*--------------------------------------------------------------
+    5.0 - Objects
+-------------------------------------------------------------- */
+
+/* ----- Framework ----- */
+.wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+}
+
+.img-responsive {
+    max-width: 60%;
+}
+
+[class*='col-'] {
+    padding: .6rem;
+}
+
+.col-sm-1 {
+    width: calc(100% * 1 / 12);
+}
+
+.col-sm-2 {
+    width: calc(100% * 2 / 12);
+}
+
+.col-sm-3 {
+    width: calc(100% * 3 / 12);
+}
+
+.col-sm-4 {
+    width: calc(100% * 4 / 12);
+}
+
+.col-sm-5 {
+    width: calc(100% * 5 / 12);
+}
+.col-sm-6 {
+    width: calc(100% * 6 / 12);
+}
+
+.col-sm-7 {
+    width: calc(100% * 7 / 12);
+}
+
+.col-sm-8 {
+    width: calc(100% * 8 / 12);
+}
+
+.col-sm-9 {
+    width: calc(100% * 9 / 12);
+}
+
+.col-sm-10 {
+    width: calc(100% * 10 / 12);
+}
+
+.col-sm-11 {
+    width: calc(100% * 11 / 12);
+}
+
+.col-sm-12 {
+    width: calc(100% * 12 / 12);
+}
+
+@media screen and (min-width: 768px) {
+
+    .wrapper {
+        width:80%;
+    }
+
+    [class*='col-'] {
+        padding: .5rem;
+    }
+
+    .col-md-1 {
+        width: calc(100% * 1 / 12);
+    }
+
+    .col-md-2 {
+        width: calc(100% * 2 / 12);
+    }
+
+    .col-md-3 {
+        width: calc(100% * 3 / 12);
+    }
+
+    .col-md-4 {
+        width: calc(100% * 4 / 12);
+    }
+    
+    .col-md-5 {
+        width: calc(100% * 5 / 12);
+    }
+
+    .col-md-6 {
+        width: calc(100% * 6 / 12);
+    }
+    
+    .col-md-7 {
+        width: calc(100% * 7 / 12);
+    }
+    
+    .col-md-8 {
+        width: calc(100% * 8 / 12);
+    }
+    
+    .col-md-9 {
+        width: calc(100% * 9 / 12);
+    }
+    
+    .col-md-10 {
+        width: calc(100% * 10 / 12);
+    }
+    
+    .col-md-11 {
+        width: calc(100% * 11 / 12);
+    }
+    
+    .col-md-12 {
+        width: calc(100% * 12 / 12);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .wrapper {
+        width:70%;
+    }
+
+    [class*='col-'] {
+        padding: .4rem;
+    }
+
+    .col-lg-1 {
+        width: calc(100% * 1 / 12);
+    }
+
+    .col-lg-2 {
+        width: calc(100% * 2 / 12);
+    }
+
+    .col-lg-3 {
+        width: calc(100% * 3 / 12);
+    }
+
+    .col-lg-4 {
+        width: calc(100% * 4 / 12);
+    }
+    
+    .col-lg-5 {
+        width: calc(100% * 5 / 12);
+    }
+    .col-lg-6 {
+        width: calc(100% * 6 / 12);
+    }
+    
+    .col-lg-7 {
+        width: calc(100% * 7 / 12);
+    }
+    
+    .col-lg-8 {
+        width: calc(100% * 8 / 12);
+    }
+    
+    .col-lg-9 {
+        width: calc(100% * 9 / 12);
+    }
+    
+    .col-lg-10 {
+        width: calc(100% * 10 / 12);
+    }
+    
+    .col-lg-11 {
+        width: calc(100% * 11 / 12);
+    }
+    
+    .col-lg-12 {
+        width: calc(100% * 12 / 12);
+    }
+}
+
+
+/*--------------------------------------------------------------
+    6.0 - COMPONENTS
+-------------------------------------------------------------- */
+/* -----groups----- */
+ #top-bar + div p:first-child,
+#bg-app p,
+nav a:hover {
+    color: #ffedb7;
+}
+
+footer {
+    background-color: #1F2232;
+}
+
+footer div h4 + ul a {
+    padding: 0;
+}
+
+#receipies p,
+#receipies h2 {
+    color: #fff;
+}
+
+#bg-app {
+    text-align: center;
+}
+
+
+/* ----- content----- */
+/* -----top-bar----- */
+#top-bar {
+    background-color: #060811;
+    position: fixed;
+    border-bottom: #1F2232 solid 3px;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#top-bar + div p:first-child {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* -----bg-hero----- */
+#bg-hero span {
+    font: 4rem/1em'Nerko One', cursive;
+}
+
+
+/* -----bg-app----- */
+#bg-app {
+    background-image: linear-gradient(to top, #183e44, #175057);
+}
+
+#bg-app p {
+    font-size: 1.3rem;
+    line-height: 2em;
+}
+
+#bg-app p:first-child {
+    margin-bottom: 0;
+}
+
+#bg-app p:nth-child(2) {
+    margin-top: 0;
+}
+
+#bg-app span {
+    color: #1F2232;
+} 
+
+#bg-app {
+    padding: 3rem 0;
+}
+
+
+/* -----two-col-left----- */
+.col-left .row {
+    flex-direction: column-reverse;
+}
+    
+
+/* -----btn----- */
+#read-more{
+    color: #bcbcbc;
+}
+
+#readmore:hover {
+    color: #737475;
+}
+
+   
+/* -----more----- */
+#more {
+    display: none;
+}
+
+
+/* -----receipies----- */
+#receipies {
+    background-image: linear-gradient(to top, #175057, #1F2232);
+    padding: 5rem 0;
+}
+
+#receipies section {
+    color: #000;
+}
+
+#receipies h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 3rem;
+}
+
+
+/* ----- footer----- */ 
+footer {
+    padding: 2rem 0;
+}
+
+footer .row {
+    justify-content: center;
+}
+
+footer img {
+    max-width: 40%;
+}
+
+footer div h4 + ul a {
+    font-size: 1.5rem;
+}
+
+footer div h4 + ul a:hover {
+    background-color: transparent;
+}
+
+
+/* ----- nav----- */ 
+nav li {
+    padding:.5em 0;
+}
+
+nav li:nth-child(2) {
+    border-left: solid 1px #fff;
+    border-right: solid 1px #fff;
+}
+
+
+/* ----- Images----- */
+#bg-hero-create {
+    padding: 16em 0 11em;
+    background: url(../img/bg-hero-create.jpg) no-repeat center center;
+    
+}
+
+#bg-hero {
+    padding: 12em 0 10em;
+    background: url(../img/bg-ingredients.jpg) no-repeat center center;
+}
+
+#bg-hero,
+#bg-hero-create {
+    -webkit-background-size: cover;
+    -o-background-size: cover; 
+    -ms-background-size: cover; 
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+/* ----- receipies img----- */
+#pizza {
+    background: url(../img/pizza-slide.jpg) no-repeat center center;
+}
+
+#Ggnocci {
+    background: url(../img/soup-slide.jpg) no-repeat center center;
+}
+
+#chx {
+    background: url(../img/chx-slide.jpg) no-repeat center center;
+}
+
+#hamburger {
+    background: url(../img/hamburger-slide.jpg) no-repeat center center;
+}
+
+#salad {
+    background: url(../img/salad-slide.jpg) no-repeat center center;
+}
+
+#kabobs {
+    background: url(../img/kabobs-slide.jpg) no-repeat center center;
+}
+
+.hover-reveal > header {
+    border-radius: 3rem;
+    -webkit-background-size: cover;
+    -o-background-size: cover; 
+    -ms-background-size: cover; 
+    -moz-background-size: cover;
+    background-size: cover;
+    padding: 6rem;
+}
+
+.hover-reveal:hover {
+    opacity: 50%;
+}
+
+
+/* -----media querie----- */
+@media screen and (min-width: 768px) {
+    /* -----groups----- */
+    #creative,
+    footer nav ul {
+        text-align: left;
+    }
+
+    nav ul,
+    #learn,
+    footer div h4 + ul  {
+        text-align: right;
+    }
+
+    #creative + div,
+    footer div div:last-child {
+        margin-top: 5em;
+    }
+
+
+    /* -----top-bar----- */
+    #top-bar + div p:first-child {
+        font-size: 4rem;
+    }
+
+    #top-bar ul {
+        margin-top: 1.4em;
+    }
+    
+
+    /* -----bg-hero----- */
+    #bg-hero {
+        padding: 18em 0;
+    }
+
+
+    /* -----bg-hero-create----- */
+    #bg-hero-create {
+        padding: 31em 0 3em;
+        background: url(../img/bg-hero-create.jpg) no-repeat center center;
+        background-color: #0c1110;
+        
+    }
+
+    /* -----receipies----- */
+    #receipies {
+        text-align: center;
+    }
+
+
+    /* -----footer----- */
+    footer .row {
+        justify-content: space-between;
+    }   
+}
+
+
+/*--------------------------------------------------------------
+    7.0 - UTILITY
+-------------------------------------------------------------- */
+.col-right,
+.col-left {
+    padding: 3rem 0;
+    background-image: linear-gradient(to top, #25636c, #175057);
+}
+
+.btn {
+    text-decoration: none;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    background-color: #1F2232;
+    color: #fff;
+}
+
+
+
+.btn:hover {
+    background-color: #ffedb7;
+    color: #000;
+}
+
+/*-----  screen reader -----  */
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+@media screen and (min-width: 768px) {
+
+    .col-right  {
+        text-align: right;
+    }
+
+    .col-left .col-md-5:first-child {
+        margin-top: 5em;
+    }
+
+    .col-left .row {
+        flex-direction: row;
+    }
+
+
+}
