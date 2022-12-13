@@ -38,13 +38,17 @@
 
 html {
     color: #fff;
-    font: 1.2rem/1.4em 'Apparat', sans-serif;
+    font: 1rem/1.4em 'Apparat', sans-serif;
     text-align: center;
 }
 
 @media screen and (min-width: 768px) {
     html {
         text-align: left;
+    }
+
+    html .row {
+        align-items: center;
     }
 }
 
@@ -61,7 +65,7 @@ ul {
 h2,
 h3 {
     color:#ffedb7;
-    font-size: 1.4;
+    font-size: 1.4rem;
 }
 
 h4 {
@@ -74,19 +78,24 @@ ul {
 
 li {
     display: inline-block;
+    margin: 0 1em;
+    padding: 0;
 }
 
 ul a {
     text-decoration: none;
     border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -o-border-radius: 2rem; 
+    -ms-border-radius: 2rem; 
+    -moz-border-radius: 2rem;
     font-weight: 500;
     font-size: .8rem;
-    padding: .5rem 1rem;
     color: #fff;
 }
 
 p + ul {
-    padding: 1em 0 0;
+    margin: 1em 0 0;
 }
 
 
@@ -294,27 +303,15 @@ p + ul {
     6.0 - COMPONENTS
 -------------------------------------------------------------- */
 /* -----groups----- */
- #top-bar + div p:first-child,
+#top-bar + div p:first-child,
 #bg-app p,
 nav a:hover {
     color: #ffedb7;
 }
 
-footer {
-    background-color: #1F2232;
-}
-
-footer div h4 + ul a {
-    padding: 0;
-}
-
 #receipies p,
 #receipies h2 {
     color: #fff;
-}
-
-#bg-app {
-    text-align: center;
 }
 
 
@@ -325,6 +322,7 @@ footer div h4 + ul a {
     position: fixed;
     border-bottom: #1F2232 solid 3px;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1;
 }
@@ -337,6 +335,11 @@ footer div h4 + ul a {
 
 
 /* -----bg-hero----- */
+#bg-hero {
+    padding: 12em 0 10em;
+    background: url(../img/bg-ingredients.jpg) no-repeat center center;
+}
+
 #bg-hero span {
     font: 4rem/1em'Nerko One', cursive;
 }
@@ -344,7 +347,14 @@ footer div h4 + ul a {
 
 /* -----bg-app----- */
 #bg-app {
-    background-image: linear-gradient(to top, #183e44, #175057);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c7d0d9+0,c7d0d9+0,868484+50,3a3939+100 */
+        background: rgb(23, 80, 87); /* Old browsers */
+        background: -moz-linear-gradient(bottom, rgb(24, 62, 68) 50%,rgb(23, 80, 87) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(bottom, rgb(24, 62, 68) 50%,rgb(23, 80, 87) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgb(24, 62, 68) 50%,rgb(23, 80, 87) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7d0d9', endColorstr='#3a3939',GradientType=0 ); /* IE6-9 */
+    padding: 6rem 0;
+    text-align: center;
 }
 
 #bg-app p {
@@ -362,25 +372,16 @@ footer div h4 + ul a {
 
 #bg-app span {
     color: #1F2232;
+    display: block;
 } 
 
-#bg-app {
-    padding: 3rem 0;
-}
 
-
-/* -----two-col-left----- */
-.col-left .row {
-    flex-direction: column-reverse;
-}
-    
-
-/* -----btn----- */
+/* -----read-more----- */
 #read-more{
     color: #bcbcbc;
 }
 
-#readmore:hover {
+#read-more:hover {
     color: #737475;
 }
 
@@ -393,7 +394,12 @@ footer div h4 + ul a {
 
 /* -----receipies----- */
 #receipies {
-    background-image: linear-gradient(to top, #175057, #1F2232);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c7d0d9+0,c7d0d9+0,868484+50,3a3939+100 */
+    background: rgb(15, 57, 62); /* Old browsers */
+    background: -moz-linear-gradient(to bottom, rgb(23, 80, 87) 50%, rgb(15, 57, 62) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(to bottom, rgb(23, 80, 87) 50%,rgb(15, 57, 62) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to to , rgb(23, 80, 87) 50%,rgb(15, 57, 62) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7d0d9', endColorstr='#3a3939',GradientType=0 ); /* IE6-9 */
     padding: 5rem 0;
 }
 
@@ -411,6 +417,12 @@ footer div h4 + ul a {
 /* ----- footer----- */ 
 footer {
     padding: 2rem 0;
+    background-color: #1F2232;
+}
+
+footer .col-md-4 a {
+    padding: 0;
+    font-size: 1.5rem;
 }
 
 footer .row {
@@ -421,11 +433,7 @@ footer img {
     max-width: 40%;
 }
 
-footer div h4 + ul a {
-    font-size: 1.5rem;
-}
-
-footer div h4 + ul a:hover {
+footer .col-md-4 a:hover {
     background-color: transparent;
 }
 
@@ -438,36 +446,24 @@ nav li {
 nav li:nth-child(2) {
     border-left: solid 1px #fff;
     border-right: solid 1px #fff;
+    margin: 0;
+    padding: 0.5rem 1rem;
 }
 
 
-/* ----- Images----- */
+/* -----bg-hero-create----- */
 #bg-hero-create {
     padding: 16em 0 11em;
     background: url(../img/bg-hero-create.jpg) no-repeat center center;
-    
 }
 
-#bg-hero {
-    padding: 12em 0 10em;
-    background: url(../img/bg-ingredients.jpg) no-repeat center center;
-}
-
-#bg-hero,
-#bg-hero-create {
-    -webkit-background-size: cover;
-    -o-background-size: cover; 
-    -ms-background-size: cover; 
-    -moz-background-size: cover;
-    background-size: cover;
-}
 
 /* ----- receipies img----- */
 #pizza {
     background: url(../img/pizza-slide.jpg) no-repeat center center;
 }
 
-#Ggnocci {
+#gnocci {
     background: url(../img/soup-slide.jpg) no-repeat center center;
 }
 
@@ -488,12 +484,11 @@ nav li:nth-child(2) {
 }
 
 .hover-reveal > header {
+    -webkit-border-radius: 3rem;
+    -o-border-radius: 3rem; 
+    -ms-border-radius: 3rem; 
+    -moz-border-radius: 3rem;
     border-radius: 3rem;
-    -webkit-background-size: cover;
-    -o-background-size: cover; 
-    -ms-background-size: cover; 
-    -moz-background-size: cover;
-    background-size: cover;
     padding: 6rem;
 }
 
@@ -506,29 +501,21 @@ nav li:nth-child(2) {
 @media screen and (min-width: 768px) {
     /* -----groups----- */
     #creative,
-    footer nav ul {
+    footer nav ul,
+    #top-bar + .wrapper {
         text-align: left;
     }
 
     nav ul,
     #learn,
-    footer div h4 + ul  {
+    footer .col-md-4 ul  {
         text-align: right;
-    }
-
-    #creative + div,
-    footer div div:last-child {
-        margin-top: 5em;
     }
 
 
     /* -----top-bar----- */
     #top-bar + div p:first-child {
         font-size: 4rem;
-    }
-
-    #top-bar ul {
-        margin-top: 1.4em;
     }
     
 
@@ -555,35 +542,63 @@ nav li:nth-child(2) {
     /* -----footer----- */
     footer .row {
         justify-content: space-between;
+        align-items: flex-end;
     }   
 }
+
+
+#bg-hero,
+#bg-hero-create,
+.hover-reveal > header {
+    -webkit-background-size: cover !important;
+    -o-background-size: cover !important; 
+    -ms-background-size: cover !important; 
+    -moz-background-size: cover !important;
+    background-size: cover !important;
+}
+
 
 
 /*--------------------------------------------------------------
     7.0 - UTILITY
 -------------------------------------------------------------- */
-.col-right,
-.col-left {
+/*-----col-same-----  */
+.col-same {
     padding: 3rem 0;
-    background-image: linear-gradient(to top, #25636c, #175057);
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c7d0d9+0,c7d0d9+0,868484+50,3a3939+100 */
+    background: rgb(25, 93, 102); /* Old browsers */
+    background: -moz-linear-gradient(top, rgb(25, 93, 102) 50%,  rgb(23, 80, 87)100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgb(25, 93, 102) 50%,rgb(23, 80, 87) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgb(25, 93, 102) 50%,rgb(23, 80, 87) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7d0d9', endColorstr='#3a3939',GradientType=0 ); /* IE6-9 */
+    padding: 5rem 0;
 }
 
+.col-same + .col-same .row {
+    flex-direction: column-reverse;
+}
+
+
+/*-----btn-----  */
 .btn {
     text-decoration: none;
     border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -o-border-radius: 2rem; 
+    -ms-border-radius: 2rem; 
+    -moz-border-radius: 2rem;
     font-weight: 500;
     font-size: .8rem;
-    padding: .5rem 1rem;
+    padding: .6rem 1.6rem;
     background-color: #1F2232;
     color: #fff;
 }
-
-
 
 .btn:hover {
     background-color: #ffedb7;
     color: #000;
 }
+
 
 /*-----  screen reader -----  */
 .sr-only {
@@ -596,18 +611,14 @@ nav li:nth-child(2) {
 }
 
 @media screen and (min-width: 768px) {
-
-    .col-right  {
+    /*-----col-right-----  */
+    .col-right {
         text-align: right;
     }
 
-    .col-left .col-md-5:first-child {
-        margin-top: 5em;
-    }
 
-    .col-left .row {
+    /*-----col-same-----  */
+    .col-same + .col-same .row {
         flex-direction: row;
     }
-
-
 }
