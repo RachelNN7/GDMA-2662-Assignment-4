@@ -9,14 +9,43 @@
         -Universal
 4.0 - Elements: styling for bare/generic HTML elements 
         - Typography: Headings, Paragraphs, Blockquotes, Anchors
+            -groups
+            -content
+            -list styles
+            -media Q 
+                -groups
+                -content
+                -h1
+                -h4
 5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
         - Framework
 6.0 - Components: specific designed components
-        -img
+        -groups
         -content
+        -top-bar
+        -bg-app
+        -read-more
+        -more
+        -receipies
+        -footer
+        -nav
+        -bg-hero-create
+        -receipies img
+        -Media Q
+            -groups
+            -top-bar
+            -bg-hero
+            -bg-hero-create
+            -receipies
+            -footer
+        -cover
 7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
-        - alignment	 
-        - screen reader   
+        -col-same
+        -btn 
+        -screen reader  
+        -Media Q
+            -col-right
+            -col-same 
 --------------------------------------------------------------*/
 
 
@@ -42,6 +71,7 @@ html {
     text-align: center;
 }
 
+
 @media screen and (min-width: 768px) {
     html {
         text-align: left;
@@ -57,6 +87,7 @@ html {
     4.0 - ELEMENTS
 -------------------------------------------------------------- */
 /*------ Typography------- */
+/*------groups------- */
 h1,
 ul {
     margin: 0;
@@ -68,10 +99,9 @@ h3 {
     font-size: 1.4rem;
 }
 
-h4 {
-    text-align: right;
-}
 
+/*------content------- */
+/*------list styles------- */
 ul {
     padding: 0;
 }
@@ -100,13 +130,23 @@ p + ul {
 
 
 @media screen and (min-width: 768px) {
+    /*------groups------- */
     h1,
     p + ul {
         text-align: left;
     }
 
+
+    /*------content------- */
+    /*------h1------- */
     h1 {
         margin: .5em 0;
+    }
+
+
+    /*------h4------- */
+    h4 {
+        text-align: right;
     }
 
 }
@@ -348,12 +388,12 @@ nav a:hover {
 /* -----bg-app----- */
 #bg-app {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c7d0d9+0,c7d0d9+0,868484+50,3a3939+100 */
-        background: rgb(23, 80, 87); /* Old browsers */
-        background: -moz-linear-gradient(bottom, rgb(24, 62, 68) 50%,rgb(23, 80, 87) 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(bottom, rgb(24, 62, 68) 50%,rgb(23, 80, 87) 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(to bottom, rgb(24, 62, 68) 50%,rgb(23, 80, 87) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7d0d9', endColorstr='#3a3939',GradientType=0 ); /* IE6-9 */
-    padding: 6rem 0;
+    background: rgb(23, 80, 87); /* Old browsers */
+    background: -moz-linear-gradient(bottom, rgb(24, 62, 68) 50%,rgb(23, 80, 87) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(bottom, rgb(24, 62, 68) 50%,rgb(23, 80, 87) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgb(24, 62, 68) 50%,rgb(23, 80, 87) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7d0d9', endColorstr='#3a3939',GradientType=0 ); /* IE6-9 */
+    padding: 6rem 0 1rem;
     text-align: center;
 }
 
@@ -396,9 +436,9 @@ nav a:hover {
 #receipies {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#c7d0d9+0,c7d0d9+0,868484+50,3a3939+100 */
     background: rgb(15, 57, 62); /* Old browsers */
-    background: -moz-linear-gradient(to bottom, rgb(23, 80, 87) 50%, rgb(15, 57, 62) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(to bottom, rgb(23, 80, 87) 50%,rgb(15, 57, 62) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to to , rgb(23, 80, 87) 50%,rgb(15, 57, 62) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(to top, rgb(23, 80, 87) 50%, rgb(15, 57, 62) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(to top, rgb(23, 80, 87) 50%,rgb(15, 57, 62) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top, rgb(23, 80, 87) 50%,rgb(15, 57, 62) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7d0d9', endColorstr='#3a3939',GradientType=0 ); /* IE6-9 */
     padding: 5rem 0;
 }
@@ -420,9 +460,9 @@ footer {
     background-color: #1F2232;
 }
 
-footer .col-md-4 a {
+.fa-brands {
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 footer .row {
@@ -431,10 +471,6 @@ footer .row {
 
 footer img {
     max-width: 40%;
-}
-
-footer .col-md-4 a:hover {
-    background-color: transparent;
 }
 
 
@@ -546,7 +582,7 @@ nav li:nth-child(2) {
     }   
 }
 
-
+/* -----cover----- */
 #bg-hero,
 #bg-hero-create,
 .hover-reveal > header {
